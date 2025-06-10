@@ -1,0 +1,28 @@
+This project offers a deep dive into the mechanics of Layer 2 scaling solutions, specifically focusing on how OP Stack chains like World Chain submit transaction batches to Layer 1 (Ethereum). We aim to understand the composition of these L1 batches and investigate how the inclusion or exclusion of certain Layer 2 transactions affects the final compressed batch size and associated L1 data costs. This is a hands-on research project that combines blockchain data extraction, intricate decoding, and data analysis to uncover insights into rollup efficiency.
+
+Project Goal:
+
+The primary goal is to develop a methodology and toolset to:
+
+1. Retrieve and decode real L1 batches submitted by World Chain to extract the underlying L2 blocks and transactions.
+2. Programmatically modify the set of L2 transactions within these batches (e.g., by removing specific transaction types).
+3. Re-construct, re-compress, and recalculate the size of these modified batches.
+4. Analyze the resulting size differences to quantify the impact of different L2 transaction profiles on L1 data footprint and costs.
+
+---
+
+Key Tasks & Responsibilities:
+
+- **Data Acquisition:** Set up scripts and use tools to fetch L1 batch data (specifically EIP-4844 blob data) for World Chain from Ethereum L1 sources (e.g., via an L1 node or data APIs).
+
+- **Batch Decoding:** Utilize or adapt existing OP Stack tools (like Optimism's `batch_decoder`) or studying reference implementations (e.g., L2BEAT's code) to parse compressed L1 batches into their pre-images – structured L2 blocks and individual L2 transactions.
+
+- **Data Manipulation & Analysis (Python):**
+    - Developing Python scripts to process the decoded L2 transaction data.
+    - Implementing logic to identify and filter specific L2 transactions based on defined criteria.
+    - Re-constructing L2 block/batch data with the modified transaction sets. This will involve understanding RLP encoding and OP Stack batch formats.
+    - Programmatically re-compressing the new batch data using relevant algorithms (e.g., Zlib or Brotli).
+
+- **Comparative Analysis:** Quantifying and comparing the byte sizes of original versus modified compressed batches to assess the impact of transaction removal.
+
+- **Documentation & Reporting:** Documenting the process, methodologies used, findings, and presenting insights on potential data footprint optimizations.
