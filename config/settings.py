@@ -13,7 +13,7 @@ DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///data/raw/batches.db')
 
 # Data Collection Settings
 BATCH_SIZE = 100  # Number of blocks to fetch per batch
-START_BLOCK = 19400000  # Approximate start of EIP-4844
+START_BLOCK = 22668700  # Updated starting block
 END_BLOCK = None  # Set to None for latest block
 
 # Analysis Settings
